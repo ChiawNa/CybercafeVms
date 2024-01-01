@@ -271,7 +271,7 @@ function createuser(requsername, reqidproof) {
   }
   
 //create visitor function
-function createvisitor(reqvisitorname, reqidproof, reqentrytime = 0) {
+function createvisitor(reqvisitorname, reqidproof, reqentrytime = "0") {
     client.db('Cybercafe').collection('Visitor').insertOne({
         "visitorname": reqvisitorname,
         "idproof": reqidproof,
@@ -281,7 +281,7 @@ function createvisitor(reqvisitorname, reqidproof, reqentrytime = 0) {
     }
 
 //create visitor function (test)
-function createtestvisitor(reqvisitorname, reqidproof, reqentrytime = 0, reqapproval) {
+function createtestvisitor(reqvisitorname, reqidproof, reqentrytime = "0", reqapproval) {
   client.db('Cybercafe').collection('Test').insertOne({
       "visitorname": reqvisitorname,
       "idproof": reqidproof,

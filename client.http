@@ -33,7 +33,7 @@ Content-Type: application/json
 {
     "visitorname": "Dr Khoo",
     "idproof": "5678",
-    "entrytime":1045
+    "entrytime":"1045"
 }
 
 ###
@@ -43,7 +43,7 @@ Content-Type: application/json
 {
     "visitorname": "Dr Lim",
     "idproof": "5678",
-    "entrytime":1045,
+    "entrytime":"1045",
     "approval": "yes"
 }
 

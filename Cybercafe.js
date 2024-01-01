@@ -139,7 +139,7 @@
  *               idproof:
  *                 type: string
  *               entrytime:
- *                 type: integer
+ *                 type: string
  *     responses:
  *       200:
  *         description: Success
