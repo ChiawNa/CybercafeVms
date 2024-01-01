@@ -237,6 +237,7 @@
  *         visitorname: JohnDoe
  *         idproof: XYZ123
  *         entrytime: 1530
+ *         approval: yes
  */
 
 
@@ -260,6 +261,7 @@
  *                   - visitorname: "ali"
  *                     idproof: "999999999"
  *                     entrytime: "1530"
+ *                     approval: "yes"
  *         '401':
  *           description: Unauthorized. Only admin can view
  *           content:
