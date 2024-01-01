@@ -197,6 +197,84 @@
  */
 
 /**
+ * @swagger
+ * /create/test/visitor:
+ *   post:
+ *     summary: Create a Visitor with security approval
+ *     tags:
+ *       - Approved Visitor List 
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               visitorname:
+ *                 type: string
+ *               idproof:
+ *                 type: string
+ *               entrytime:
+ *                 type: integer
+ *               approval:
+ *                 type: string
+ * 
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: Visitor created successfully
+ *       400:
+ *         description: Bad Request
+ *         content:
+ *           application/json:
+ *             example:
+ *               error: Invalid input data
+ *
+ *     examples:
+ *       'application/json':
+ *         visitorname: JohnDoe
+ *         idproof: XYZ123
+ *         entrytime: 1530
+ */
+
+
+/**
+ * @openapi
+ * paths:
+ *   /view/test/visitor/admin:
+ *     get:
+ *       summary: View Approved Visitors
+ *       tags:
+ *         - Approved Visitor List
+ *       security:
+ *         - bearerAuth: []
+ *       responses:
+ *         '200':
+ *           description: Successfully retrieved visitor information.
+ *           content:
+ *             application/json:
+ *               example:
+ *                 visitors:
+ *                   - visitorname: "ali"
+ *                     idproof: "999999999"
+ *                     entrytime: "1530"
+ *         '401':
+ *           description: Unauthorized. Only admin can view
+ *           content:
+ *             application/json:
+ *               example:
+ *                 error: "Unauthorized"
+ *         '500':
+ *           description: Internal Server Error.
+ *           content:
+ *             application/json:
+ *               example:
+ *                 error: "Internal Server Error"
+ */
+
+/**
  * @openapi
  * paths:
  *   /delete/visitor/{idproof}:

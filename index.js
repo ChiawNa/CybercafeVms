@@ -105,6 +105,23 @@ async function run() {
         res.status(500).send("Internal Server Error");
         }
     });
+
+    //create visitor (test)
+    app.post('/create/test/visitor', async (req, res) => {
+      try {
+        let result = await createtestvisitor(
+          req.body.visitorname,
+          req.body.idproof,
+          req.body.entrytime,
+          req.body.approval
+          ); 
+          res.send(result);
+      }
+      catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+        }
+    });
     
     //see created visitor
     app.get('/view/visitor/admin', verifyToken, async (req, res) => {
@@ -112,6 +129,22 @@ async function run() {
         const result = await client
             .db('Cybercafe')
             .collection('Visitor')
+            .find()
+            .toArray();
+    
+        res.send(result);
+        } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+        }
+    });
+
+      //see created visitor (test)
+      app.get('/view/test/visitor/admin', verifyToken, async (req, res) => {
+        try {
+        const result = await client
+            .db('Cybercafe')
+            .collection('Test')
             .find()
             .toArray();
     
@@ -246,6 +279,17 @@ function createvisitor(reqvisitorname, reqidproof, reqentrytime = 0) {
       });
       return "Visitor is added";
     }
+
+//create visitor function (test)
+function createtestvisitor(reqvisitorname, reqidproof, reqentrytime = 0, reqapproval) {
+  client.db('Cybercafe').collection('Test').insertOne({
+      "visitorname": reqvisitorname,
+      "idproof": reqidproof,
+      "entrytime":reqentrytime,
+      "approval":reqapproval
+    });
+    return "Visitor is added";
+  }
 
 //create visitorlog function
 function createvisitorlog(reqvisitorname, reqidproof, reqtimespend = 0, reqpayment = 0) {

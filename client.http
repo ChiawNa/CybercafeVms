@@ -23,8 +23,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/view/user/admin
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtaXIiLCJpYXQiOjE3MDM0MTcwMTMsImV4cCI6MTcwMzQxNzYxM30.EpkbihyKjKazLHI9HHNaiqNQIMoZIUTikmMc4B0d800
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtaXIiLCJpYXQiOjE3MDQwOTkyNTgsImV4cCI6MTcwNDA5OTg1OH0.SCvTyAWKI7ZIepogvkeTktUCZ_pPbSYHqaXlzoX2AYQ
 //Visitor
 
 ###
@@ -38,9 +37,24 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/view/visitor/admin
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtaXIiLCJpYXQiOjE3MDM0MTcwMTMsImV4cCI6MTcwMzQxNzYxM30.EpkbihyKjKazLHI9HHNaiqNQIMoZIUTikmMc4B0d800
+post http://localhost:3000/create/test/visitor
+Content-Type: application/json
 
+{
+    "visitorname": "Dr Lim",
+    "idproof": "5678",
+    "entrytime":1045,
+    "approval": "yes"
+}
+
+###
+GET http://localhost:3000/view/visitor/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtaXIiLCJpYXQiOjE3MDQwOTkyNTgsImV4cCI6MTcwNDA5OTg1OH0.SCvTyAWKI7ZIepogvkeTktUCZ_pPbSYHqaXlzoX2AYQ
+
+
+###
+GET http://localhost:3000/view/test/visitor/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtaXIiLCJpYXQiOjE3MDQwOTkyNTgsImV4cCI6MTcwNDA5OTg1OH0.SCvTyAWKI7ZIepogvkeTktUCZ_pPbSYHqaXlzoX2AYQ
 
 
 ###
