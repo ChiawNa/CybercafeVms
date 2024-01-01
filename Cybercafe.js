@@ -214,7 +214,7 @@
  *               idproof:
  *                 type: string
  *               entrytime:
- *                 type: integer
+ *                 type: string
  *               approval:
  *                 type: string
  * 
